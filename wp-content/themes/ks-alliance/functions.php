@@ -18,37 +18,39 @@ add_action (
     ?>
     <script>
       window.themeDirectoryUrl = '<?php echo get_template_directory_uri(); ?>';
-          window.ajaxUrl = '<?php echo admin_url('admin-ajax.php'); ?>';
+      window.ajaxUrl = '<?php echo admin_url('admin-ajax.php'); ?>';
     </script>
     <?php 
   }
 );
 
-add_theme_support( 'menus' );
-add_action( 
-    'after_setup_theme', 
-    function(){
-        register_nav_menus( [
-            'header_menu' => 'menu_v_shapke'
-        ] );
-    } 
-);
+// add_theme_support( 'menus' );
+// add_action( 
+//     'after_setup_theme', 
+//     function(){
+//         register_nav_menus( [
+//             'header_menu' => 'menu_v_shapke'
+//         ] );
+//     } 
+// );
 
 add_action( 
     'wp_enqueue_scripts', 
     function(){ 
         wp_enqueue_style( 'true_style', get_stylesheet_directory_uri() . '/style.css' );
-        wp_enqueue_script( 'script-name', get_template_directory_uri() . '/assets/public/js/rs_main.js', array(), '1.0.0', true );
+        // wp_enqueue_script( 'script-name', get_template_directory_uri() . '/assets/public/js/rs_main.js', array(), '1.0.0', true );
     }
 );
 
-function rs_render_flex_content($rs_flex_content)
+function rs_render_flex_content_part($rs_flex_content)
 {
   if (!empty($rs_flex_content)) {
     foreach ($rs_flex_content as $data) {
-      $layout = array_shift($data);
+      $layout = $data;
+      if (is_array($data))
+        $layout = array_shift($data);
       if (file_exists(get_template_directory() . '/template-parts/rs-flex-content/flex-content-'.$layout.'.php')) {          
-          $GLOBALS['rs-flex-content-template-data'] = $data;
+          $GLOBALS['rs-flex-content-template-data'] = $rs_flex_content;
           get_template_part( 'template-parts/rs-flex-content/flex-content', $layout );
           unset( $GLOBALS['rs-flex-content-template-data'] );
       }
