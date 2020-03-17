@@ -16,7 +16,8 @@ if(!$query->have_posts())
 		?>
 			<!-- ITEM -->
 			<div class="infogallery__card">
-			  <a href="service.html"  >
+	          <img src="<?php echo get_field("main_img", get_the_ID() ) ?>" alt="">
+			  <a href="<?php echo get_permalink( get_the_ID() ); ?>">
 			    <div class="infogallery__blur">
 			      <div class="infogallery__text d-flex">
 			        <div class="info-wrap">

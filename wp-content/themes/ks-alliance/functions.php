@@ -65,7 +65,6 @@ function rs_get_prod_img_url($product = null)
     : $img;
 }
 
-//  to include in functions.php
 function the_breadcrumb()
 {
     $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
@@ -111,11 +110,19 @@ function the_breadcrumb()
             } else {
                 $cat = get_the_category();
                 $cat = $cat[0];
-                $cats = get_category_parents($cat, true, ' ' . $delimiter . ' ');
-                if ($showCurrent == 0) {
-                    $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
+                // $cats = get_category_parents($cat, true, ' ' . $delimiter . ' ');
+                // if ($showCurrent == 0) {
+                //     $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
+                // }
+                // echo $cats;
+                switch ($cat->term_id) {
+                    case 3:
+                        echo '<a href="' . get_permalink(12) . '">' . get_the_title( 12 ) . '</a> ' . $delimiter . ' ';
+                        break;
+                    case 2:
+                        break;
                 }
-                echo $cats;
+                // dd($cat);
                 if ($showCurrent == 1) {
                     echo $before . get_the_title() . $after;
                 }
