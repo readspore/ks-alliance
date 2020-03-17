@@ -24,5 +24,4 @@ if (empty($data))
         	<?php endforeach ?>
         </div>
     </div>
-
 </div>
