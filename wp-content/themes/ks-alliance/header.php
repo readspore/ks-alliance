@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/js/libs/swiper-5.3.6/package/css/swiper.min.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/opensanscss/stylesheet.css" />
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/fonts/playfairdisplay/stylesheet.css" />
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
@@ -97,7 +98,7 @@
               </div>
 
               <a class="navbar__link" href="projects.html">ПРОЕКТЫ</a>
-              <a class="navbar__link" href="articles.html">СТАТЬИ</a>
+              <a class="navbar__link" href="<?php echo get_permalink( 12 ); ?>">СТАТЬИ</a>
               <a class="navbar__link" href="<?php echo get_permalink( 10 ); ?>">О КОМПАНИИ</a>
               
             </nav>
@@ -135,4 +136,3 @@
   <!-- HEADER END -->
     <div class="center-wrap">
   		<?php the_post(); ?>
-      	<?php the_content(); ?>

@@ -16,7 +16,7 @@ if(!$query->have_posts())
 		?>
 			<!-- ITEM -->
 			<div class="infogallery__card">
-			  <a href="service.html" target="_blank">
+			  <a href="service.html"  >
 			    <div class="infogallery__blur">
 			      <div class="infogallery__text d-flex">
 			        <div class="info-wrap">

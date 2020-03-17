@@ -33,7 +33,7 @@ if(!$query->have_posts())
         <!-- Item  -->
         <div class="projects__card">
           <img src="<?php echo get_field("img", get_the_ID()); ?>" alt="">
-          <a href="articleinner.html" target="_blank">
+          <a href="articleinner.html"  >
             <div class="background__blur">
               <div class="projects__hover d-flex">
                 <div class="project__info d-flex">
