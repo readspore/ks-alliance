@@ -33,7 +33,7 @@ if(!$query->have_posts())
               <!-- ITEM -->
               <div class="infogallery__card">
                   <img src="<?php echo get_field("img", get_the_ID()); ?>" alt="">
-                  <a href="<?php echo get_permalink(get_the_ID()); ?>" target="_blank">
+                  <a href="<?php echo get_permalink(get_the_ID()); ?>"  >
                       <div class="infogallery__blur">
                           <div class="infogallery__text d-flex">
                               <div class="info-wrap">
@@ -53,28 +53,7 @@ if(!$query->have_posts())
               ?>
               <div class="infogallery__card">
                   <img src="<?php echo get_field("img", get_the_ID()); ?>" alt="">
-                  <a href="<?php echo get_permalink(get_the_ID()); ?>" target="_blank">
-                      <div class="infogallery__blur">
-                          <div class="infogallery__text d-flex">
-                              <div class="info-wrap">
-                                <h2 class="card__title"><?php the_title(); ?></h2>
-                                <p class="card__text"><?php echo get_field("subtitle", get_the_ID()); ?> </p>
-                              </div>
-                              <p class="card__price"><?php echo get_field("price", get_the_ID()); ?></p>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-              <!-- END ITEM -->
-            <?php endif; ?>
-              <!-- ITEM -->
-              <?php
-                $post = $query->next_post();
-                if($post) :
-              ?>
-              <div class="infogallery__card">
-                  <img src="<?php echo get_field("img", get_the_ID()); ?>" alt="">
-                  <a href="<?php echo get_permalink(get_the_ID()); ?>" target="_blank">
+                  <a href="<?php echo get_permalink(get_the_ID()); ?>"  >
                       <div class="infogallery__blur">
                           <div class="infogallery__text d-flex">
                               <div class="info-wrap">
@@ -95,7 +74,28 @@ if(!$query->have_posts())
               ?>
               <div class="infogallery__card">
                   <img src="<?php echo get_field("img", get_the_ID()); ?>" alt="">
-                  <a href="<?php echo get_permalink(get_the_ID()); ?>" target="_blank">
+                  <a href="<?php echo get_permalink(get_the_ID()); ?>"  >
+                      <div class="infogallery__blur">
+                          <div class="infogallery__text d-flex">
+                              <div class="info-wrap">
+                                <h2 class="card__title"><?php the_title(); ?></h2>
+                                <p class="card__text"><?php echo get_field("subtitle", get_the_ID()); ?> </p>
+                              </div>
+                              <p class="card__price"><?php echo get_field("price", get_the_ID()); ?></p>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+              <!-- END ITEM -->
+            <?php endif; ?>
+              <!-- ITEM -->
+              <?php
+                $post = $query->next_post();
+                if($post) :
+              ?>
+              <div class="infogallery__card">
+                  <img src="<?php echo get_field("img", get_the_ID()); ?>" alt="">
+                  <a href="<?php echo get_permalink(get_the_ID()); ?>"  >
                       <div class="infogallery__blur">
                           <div class="infogallery__text d-flex">
                               <div class="info-wrap">
