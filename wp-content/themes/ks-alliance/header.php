@@ -98,7 +98,7 @@
 
               <a class="navbar__link" href="projects.html">ПРОЕКТЫ</a>
               <a class="navbar__link" href="articles.html">СТАТЬИ</a>
-              <a class="navbar__link" href="aboutcompany.html">О КОМПАНИИ</a>
+              <a class="navbar__link" href="<?php echo get_permalink( 10 ); ?>">О КОМПАНИИ</a>
               
             </nav>
           </div>
