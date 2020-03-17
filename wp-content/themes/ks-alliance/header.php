@@ -136,4 +136,3 @@
   <!-- HEADER END -->
     <div class="center-wrap">
   		<?php the_post(); ?>
-      	<?php the_content(); ?>
