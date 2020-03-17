@@ -208,3 +208,21 @@ function the_header_additional_links($link_class = "")
             '</a> ';
     }
 }
+
+function the_last_articls($link_class = "")
+{
+    $query = new WP_Query( 
+            array(
+                "category__in" => 3,
+                'posts_per_page' => 4
+            )
+        );
+    if(!$query->have_posts())
+        return;
+    while ($query->have_posts()) {
+        $query->the_post();
+        echo '<a href="' . get_permalink(get_the_ID()) . '" class="'.$link_class.'">' . 
+            get_the_title( get_the_ID() ) . 
+            '</a>';
+    }
+}
