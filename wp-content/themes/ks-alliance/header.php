@@ -47,13 +47,7 @@
         <div class="menu-wrap" id="mobile-wrap">
           <nav class="navbar">
             <a class="navbar__link" href="<?php echo get_home_url(); ?>">ГЛАВНАЯ</a>
-            <a class="navbar__link" href="service.html">Кадастровые работы
-            </a>
-            <a class="navbar__link" href="service.html">Согласование в КГА, КГИОП, ГКУ
-              Имущество Санкт-Петербурга</a>
-            <a class="navbar__link" href="service.html">Согласование перепланировок </a>
-            <a class="navbar__link" href="service.html">Проектные работы. Реконструкция
-              объектов недвижимости</a>
+            <?php the_services("navbar__link"); ?>
             <a class="navbar__link" href="projects.html">ПРОЕКТЫ</a>
             <a class="navbar__link" href="articles.html">СТАТЬИ</a>
             <a class="navbar__link" href="aboutcompany.html">О КОМПАНИИ</a>
@@ -87,20 +81,10 @@
                   <i class="down-arrow"></i>
                 </div>
                 <div class="dropdown-content">
-                  <a href="service.html">Кадастровые работы
-                  </a>
-                  <a href="service.html">Согласование в КГА, КГИОП, ГКУ
-                    Имущество Санкт-Петербурга</a>
-                  <a href="service.html">Согласование перепланировок </a>
-                  <a href="service.html">Проектные работы. Реконструкция
-                    объектов недвижимости</a>
+                  <?php the_services(); ?>
                 </div>
               </div>
-
-              <a class="navbar__link" href="<?php echo get_permalink( 14 ); ?>">ПРОЕКТЫ</a>
-              <a class="navbar__link" href="<?php echo get_permalink( 12 ); ?>">СТАТЬИ</a>
-              <a class="navbar__link" href="<?php echo get_permalink( 10 ); ?>">О КОМПАНИИ</a>
-              
+              <?php the_header_additional_links("navbar__link"); ?>
             </nav>
           </div>
         </div>

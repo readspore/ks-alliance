@@ -182,3 +182,29 @@ function the_breadcrumb()
         echo '</div>';
     }
 } // end the_breadcrumb()
+
+
+function the_services($link_class = "")
+{
+    $query = new WP_Query( 'category__in=2' );
+    if(!$query->have_posts())
+        return;
+    while ($query->have_posts()) {
+        $query->the_post();
+        echo '<a href="' . get_permalink(get_the_ID()) . '" class="'.$link_class.'">' . 
+            get_the_title( get_the_ID() ) . 
+            '</a>';
+    }
+}
+
+function the_header_additional_links($link_class = "")
+{
+    $page_ids = get_field("header-links", 22);
+    if (empty($page_ids))
+        return;
+    foreach ($page_ids as $id) {
+        echo '<a href="' . get_permalink($id["page_id"]) . '" class="'.$link_class.'">' . 
+            get_the_title( $id["page_id"] ) . 
+            '</a> ';
+    }
+}
