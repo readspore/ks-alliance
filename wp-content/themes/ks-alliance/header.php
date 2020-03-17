@@ -48,11 +48,7 @@
           <nav class="navbar">
             <a class="navbar__link" href="<?php echo get_home_url(); ?>">ГЛАВНАЯ</a>
             <?php the_services("navbar__link"); ?>
-            <a class="navbar__link" href="projects.html">ПРОЕКТЫ</a>
-            <a class="navbar__link" href="articles.html">СТАТЬИ</a>
-            <a class="navbar__link" href="aboutcompany.html">О КОМПАНИИ</a>
-            
-
+            <?php the_header_additional_links("navbar__link"); ?>
           </nav>
         </div>
 

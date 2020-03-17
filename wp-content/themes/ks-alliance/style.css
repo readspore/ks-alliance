@@ -5,3 +5,8 @@ Author: ../../.
 Description: .
 Version: 1.0.0
 */
+
+.footer__text p{
+    font-size: 11px;
+    color: #6d6d6d;
+}
