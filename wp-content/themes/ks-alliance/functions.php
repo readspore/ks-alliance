@@ -38,7 +38,7 @@ add_action(
     'wp_enqueue_scripts', 
     function(){ 
         wp_enqueue_style( 'true_style', get_stylesheet_directory_uri() . '/style.css' );
-        // wp_enqueue_script( 'script-name', get_template_directory_uri() . '/assets/public/js/rs_main.js', array(), '1.0.0', true );
+        wp_enqueue_script( 'script-name', get_template_directory_uri() . '/assets/js/rs_main.js', array(), '1.0.0', true );
     }
 );
 

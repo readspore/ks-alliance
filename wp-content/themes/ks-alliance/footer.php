@@ -91,6 +91,7 @@
   <!-- END FOOTER  -->
   <script src="<?php echo get_template_directory_uri(); ?>/assets/js/scripts.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/swiper-5.3.6/package/js/swiper.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/jquery-phone-mask.js"></script>
 </body>
 
 </html>
