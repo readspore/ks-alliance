@@ -23,14 +23,22 @@
   <div class="popup" id="tender">
     <div class="popup__blur" id="popup__blur" onclick="closeTender(event)">
       <div class="popup-window">
-        <form action="" class="popup-window__form" id="popup-window">
+        <form         
+          action="<?php echo admin_url('admin-ajax.php'); ?>" 
+          enctype="multipart/form-data"
+          onsubmit="rs_SubmitFormHandler(event)"
+          class="popup-window__form" 
+          id="popup-window" 
+        >
           <a class="close" id="close" onclick="closeTender(event)"></a>
+          <input type="hidden" name="form-title" value="Хочу с вами работать">
+          <input type="hidden" name="action" value="rs_want_to_work">
           <label class="form__label">Хочу с вами работать</label>
-          <input class="form__input" type="text" name="name" id="" placeholder="Ваша компания*">
-          <input class="form__input" type="text" name="name" id="" placeholder="Имя*">
-          <input class="form__input" type="tel" name="phone" id="" placeholder="Телефон*">
+          <input class="form__input" type="text" name="company_name" id="" placeholder="Ваша компания*" required minlength="5">
+          <input class="form__input" type="text" name="name" id="" placeholder="Имя*" required minlength="4">
+          <input class="form__input" type="tel" name="phone" id="" placeholder="Телефон*" required data-rs-phone-mask>
           <textarea name="about__tender" class="about__tender" id="about__tender" cols="30" rows="10"
-            placeholder="Расскажите о тендере*"></textarea>
+            placeholder="Расскажите о тендере*" required minlength="20"></textarea>
           <button class="form__button" type="submit">Отправить заявку</button>
           <p class="tender__message">Отправляя заявку, вы соглашаетесь
             с политикой конфиденциальности</p>

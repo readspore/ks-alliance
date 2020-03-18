@@ -1,54 +1,51 @@
 <?php 
 
-function send_form_with_file() {
-
-    /* Забираем отправленные данные */
-    // dd($_POST);
-    $name = $_POST['name'];
-    $phone = $_POST['phone'];
-    $title = $_POST['form-name'];
-    // $email = $_POST['client_email'];
-    // $quest = $_POST['client_quest'];
-
-    $res = "Уведомление с сайта '".get_bloginfo('name')."' <br/><br/>
-    Имя:  $name <br/><br/>
-    Телефон: $phone <br/><br/>";
+function send_rs_want_to_work() {
 
     /* Отправляем нам письмо */
-    $emailTo = get_field('email', 7);
-    $subject = $title;
+    $send = rs_send_form_mail("rs_want_to_work");
+
+    /* Завершаем выполнение ajax */
+    if( $send ){
+        $response = [
+            'success' => true
+        ];
+    } else {
+        $response = [
+            'success' => false
+        ];
+    }
+    echo json_encode($response);
+    die();
+
+}
+add_action("wp_ajax_rs_want_to_work", "send_rs_want_to_work");
+add_action("wp_ajax_nopriv_rs_want_to_work", "send_rs_want_to_work");
+
+function rs_send_form_mail($form_type)
+{
+    $res = "";
+    switch ($form_type) {
+        case 'rs_want_to_work':
+            $company_name = $_POST['company_name'];
+            $name = $_POST['name'];
+            $phone = $_POST['phone'];
+            $about = $_POST['about__tender'];
+            $res = "Уведомление с сайта '".get_bloginfo('name')."' <br/><br/>
+            Имя:  $name <br/><br/>
+            Компания:  $company_name <br/><br/>
+            О тендере:  $about <br/><br/>
+            Телефон: $phone <br/><br/>";
+            break;
+        
+        default:
+            # code...
+            break;
+    }
+    $emailTo = get_field('email', 22);
+    $subject = $_POST['form-title'];
     $headers = "Content-type: text/html; charset=\"utf-8\"";
     $mailBody = $res;
 
-    if(!empty($_FILES['file-upload']['tmp_name'])){
-        //rename the uploaded file
-        $file_path = dirname($_FILES['file-upload']['tmp_name']);
-        $new_file_uri = $file_path.'/'.$_FILES['file-upload']['name'];
-        $moved = move_uploaded_file($_FILES['file-upload']['tmp_name'], $new_file_uri);
-        $attachment_file = $moved ? $new_file_uri : $_FILES['file-upload']['tmp_name'];
-        $attachments[] = $attachment_file;
-    }
-
-if ($attachment_file) {
-    $send = wp_mail($emailTo, $subject, $mailBody, $headers, $attachment_file);
-    unlink($attachment_file);
-} else {
-    $send = wp_mail($emailTo, $subject, $mailBody, $headers);
+    return wp_mail($emailTo, $subject, $mailBody, $headers);
 }
-
-/* Завершаем выполнение ajax */
-if( $send ){
-    $response = [
-        'success' => true
-    ];
-} else {
-    $response = [
-        'success' => false
-    ];
-}
-echo json_encode($response);
-die();
-
-}
-add_action("wp_ajax_form_with_file", "send_form_with_file");
-add_action("wp_ajax_nopriv_form_with_file", "send_form_with_file");
