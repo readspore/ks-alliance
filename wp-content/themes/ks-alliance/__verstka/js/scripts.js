@@ -95,11 +95,6 @@ function closeTender(e) {
 	}
 }
 
-function openRequest(e) {
-	disableScrolling();
-	request.classList.add("tender-active");
-}
-
 function closeRequest(e) {
 	if (e.target.className === "close" || e.target.className === "popup__blur") {
 		enableScrolling();

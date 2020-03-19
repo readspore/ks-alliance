@@ -1,7 +1,12 @@
-function rs_SubmitFormHandler(e){
+function rs_SubmitFormHandler(e, type = "default"){
   var form = e.target;
-  console.log(form);
   e.preventDefault();
+  if (type == "with-dd-1" && document.querySelector("#service-form-inp").value == "")
+  {
+    // document.querySelector("#service-form-inp").closest(".select__wrap").classList.add("inp-error");
+    return;
+  }  
+  // document.querySelector("#service-form-inp").closest(".select__wrap").classList.remove("inp-error");
   var formData = new FormData(form);
   var xhttp = new XMLHttpRequest();
   xhttp.open('POST', form.getAttribute('action'), true);
@@ -13,7 +18,9 @@ function rs_SubmitFormHandler(e){
               if(response.success){
                   alert("Ваша заявка успешно отправлена");
                   $('input[type="text"]').each((i, elem)=>{elem.value = '';});
+                  $('input[type="tel"]').each((i, elem)=>{elem.value = '';});
                   $('textarea').each((i, elem)=>{elem.value = '';});
+                  $(".close").each((i,e)=>e.click());
               } else {
                   alert("Что-то пошло не так, попробуйте написать нам.");
               }
@@ -22,4 +29,11 @@ function rs_SubmitFormHandler(e){
           }
       }
   }
+}
+
+function openRequest(serviceName) {
+  disableScrolling();
+  request.classList.add("tender-active");
+  request.querySelector('[name="form-title"]').value = "Форма с страницы усулги - " + serviceName;
+  request.querySelector('[name="service-link"]').value = window.location.href + "  ||  " + serviceName;
 }
