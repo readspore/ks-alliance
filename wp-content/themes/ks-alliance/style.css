@@ -10,3 +10,24 @@ Version: 1.0.0
     font-size: 11px;
     color: #6d6d6d;
 }
+
+.inp-error{
+	border-bottom: 	1px solid red;
+}
+
+.tender-active{
+    top: 0;
+    bottom: 0;
+}
+
+.rs-some-wrap{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.projects__gallery .rs-some-wrap:nth-child(even){
+	flex-direction: row-reverse;
+}
