@@ -18,7 +18,9 @@ function rs_SubmitFormHandler(e, type = "default"){
               if(response.success){
                   alert("Ваша заявка успешно отправлена");
                   $('input[type="text"]').each((i, elem)=>{elem.value = '';});
+                  $('input[type="tel"]').each((i, elem)=>{elem.value = '';});
                   $('textarea').each((i, elem)=>{elem.value = '';});
+                  $(".close").each((i,e)=>e.click());
               } else {
                   alert("Что-то пошло не так, попробуйте написать нам.");
               }
@@ -27,4 +29,11 @@ function rs_SubmitFormHandler(e, type = "default"){
           }
       }
   }
+}
+
+function openRequest(serviceName) {
+  disableScrolling();
+  request.classList.add("tender-active");
+  request.querySelector('[name="form-title"]').value = "Форма с страницы усулги - " + serviceName;
+  request.querySelector('[name="service-link"]').value = window.location.href + "  ||  " + serviceName;
 }
