@@ -19,3 +19,15 @@ Version: 1.0.0
     top: 0;
     bottom: 0;
 }
+
+.rs-some-wrap{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.projects__gallery .rs-some-wrap:nth-child(even){
+	flex-direction: row-reverse;
+}

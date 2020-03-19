@@ -12,8 +12,6 @@ $query = new WP_Query(
          );
 $max_count = count($query->posts) - count($query->posts) % 5;
 $i = 0;
-// array_splice($query->posts, count($query->posts) - count($query->posts)  % 4);
-// dd($query->posts);
 if(!$query->have_posts())
   return;
 ?>
@@ -25,6 +23,7 @@ if(!$query->have_posts())
               $query->the_post();
               ++$i;
           ?>
+          <div class="rs-some-wrap">
             <!--BLOCK-->
             <div class="projects__wrap">
                 <div class="projects__bigimage">
@@ -121,6 +120,7 @@ if(!$query->have_posts())
                     </a>
                 </div>
             </div>
+          </div>
           <?php
              endwhile; 
           ?>
