@@ -31,6 +31,7 @@ a {
 }
 
 .d-flex {
+	display: -webkit-flex;
 	display: flex;
 }
 
@@ -44,6 +45,9 @@ a {
 	flex-wrap: wrap;
 }
 
+.projects__gallery .reverse-wrap:nth-child(even) {
+	flex-direction: row-reverse;
+}
 /*--------------------------HEADER------------------------------------------------------------*/
 .header {
 	position: absolute;
@@ -1449,7 +1453,7 @@ div.responsive {
 }
 @media screen and (min-width: 1024px) {
 	.projects__wrap {
-		width: 50%;
+		width: 49.99%;
 		max-width: none;
 		justify-content: center;
 	}
@@ -1473,6 +1477,11 @@ div.responsive {
 	}
 	.projects__hover {
 		padding: 45px 5px;
+	}
+
+	.projects__gallery .reverse-wrap {
+		flex-direction: unset;
+		display: unset;
 	}
 }
 
