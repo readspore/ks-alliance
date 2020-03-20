@@ -6,28 +6,35 @@ Description: .
 Version: 1.0.0
 */
 
-.footer__text p{
-    font-size: 11px;
-    color: #6d6d6d;
+.footer__text p {
+	font-size: 11px;
+	color: #6d6d6d;
 }
 
-.inp-error{
-	border-bottom: 	1px solid red;
+.inp-error {
+	border-bottom: 1px solid red;
 }
 
-.tender-active{
-    top: 0;
-    bottom: 0;
+.tender-active {
+	top: 0;
+	bottom: 0;
 }
 
-.rs-some-wrap{
+.rs-some-wrap {
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
+	width: 100%;
 }
 
-.projects__gallery .rs-some-wrap:nth-child(even){
+.projects__gallery .rs-some-wrap:nth-child(even) {
 	flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 1024px) {
+	.rs-some-wrap {
+		display: unset;
+	}
 }
