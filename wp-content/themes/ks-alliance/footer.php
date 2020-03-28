@@ -60,7 +60,7 @@
       <div class="horizontal-divider"></div>
       <div class="footer__inner d-flex">
         <div class="footer__logo">
-          <a href="mainpage.html">
+          <a href="<?php echo get_home_url(); ?>">
             <img class="" src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/horizontal_on_transparent_curves_by_logaster.svg" alt="Alliance logo" />
           </a>
         </div>
@@ -69,7 +69,7 @@
       <div class="header__inner d-flex">
         <div class="header__left d-flex">
           <div class="header__logo">
-            <a href="mainpage.html">
+            <a href="<?php echo get_home_url(); ?>">
               <img class="logotype" src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/horizontal_on_transparent_curves_by_logaster.svg"
                 alt="Alliance logo" />
             </a>
