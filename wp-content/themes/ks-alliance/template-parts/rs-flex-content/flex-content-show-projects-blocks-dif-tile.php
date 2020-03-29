@@ -28,7 +28,7 @@ if(!$query->have_posts())
             <div class="projects__wrap">
                 <div class="projects__bigimage">
                     <img src="<?php echo get_field("img", get_the_ID()); ?>" alt="">
-                    <a href="articleinner.html">
+                    
                         <div class="background__blur">
                             <div class="projects__hover d-flex">
                               <div class="info-wrap">
@@ -38,7 +38,7 @@ if(!$query->have_posts())
                               <p class="card__price"><?php echo get_field("price", get_the_ID()); ?></p>
                             </div>
                         </div>
-                    </a>
+                    
                 </div>
             </div>
             <!--BLOCK-->
@@ -50,7 +50,7 @@ if(!$query->have_posts())
                     ++$i;
                   ?>
                     <img src="<?php echo get_field("img", get_the_ID()); ?>" alt="">
-                    <a href="articleinner.html">
+                    
                         <div class="background__blur">
                             <div class="projects__hover d-flex">
                               <div class="info-wrap">
@@ -60,7 +60,7 @@ if(!$query->have_posts())
                               <p class="card__price"><?php echo get_field("price", get_the_ID()); ?></p>
                             </div>
                         </div>
-                    </a>
+                    
                 </div>
                 <!-- Item  -->
                 <div class="projects__card">
@@ -69,7 +69,7 @@ if(!$query->have_posts())
                     ++$i;
                   ?>
                     <img src="<?php echo get_field("img", get_the_ID()); ?>" alt="">
-                    <a href="articleinner.html">
+                    
                         <div class="background__blur">
                             <div class="projects__hover d-flex">
                               <div class="info-wrap">
@@ -79,7 +79,7 @@ if(!$query->have_posts())
                               <p class="card__price"><?php echo get_field("price", get_the_ID()); ?></p>
                             </div>
                         </div>
-                    </a>
+                   
                 </div>
                 <!-- Item  -->
                 <div class="projects__card">
@@ -88,7 +88,7 @@ if(!$query->have_posts())
                     ++$i;
                   ?>
                     <img src="<?php echo get_field("img", get_the_ID()); ?>" alt="">
-                    <a href="articleinner.html">
+                    
                         <div class="background__blur">
                             <div class="projects__hover d-flex">
                               <div class="info-wrap">
@@ -98,7 +98,7 @@ if(!$query->have_posts())
                               <p class="card__price"><?php echo get_field("price", get_the_ID()); ?></p>
                             </div>
                         </div>
-                    </a>
+                    
                 </div>
                 <!-- Item  -->
                 <div class="projects__card">
@@ -107,7 +107,7 @@ if(!$query->have_posts())
                     ++$i;
                   ?>
                     <img src="<?php echo get_field("img", get_the_ID()); ?>" alt="">
-                    <a href="articleinner.html">
+                   
                         <div class="background__blur">
                             <div class="projects__hover d-flex">
                               <div class="info-wrap">
@@ -117,7 +117,7 @@ if(!$query->have_posts())
                               <p class="card__price"><?php echo get_field("price", get_the_ID()); ?></p>
                             </div>
                         </div>
-                    </a>
+                    
                 </div>
             </div>
           </div>
