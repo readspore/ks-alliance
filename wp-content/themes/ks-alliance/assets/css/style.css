@@ -505,6 +505,7 @@ a {
 .nice-select {
 	line-height: 15px;
 	border-radius: unset;
+	white-space: unset;
 }
 
 .nice-select .list {
@@ -512,6 +513,27 @@ a {
 	border-radius: 5px;
 	box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11);
 	width: 100%;
+}
+.nice-select .current{
+	display: block;
+    white-space: nowrap;
+    max-width: 90%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.nice-select .option {
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 30px;
+    list-style: none;
+    min-height: 40px;
+    outline: none;
+    padding: 7px;
+    padding-left: 18px;
+    padding-right: 29px;
+    text-align: left;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
 }
 .nice-select .option:hover,
 .nice-select .option.focus,
@@ -965,7 +987,7 @@ div.responsive {
 	position: relative;
 	height: 600px;
 	background: url("../images/service/header_image.jpg") center no-repeat;
-	background-size: cover;
+	background-size: cover !important;
 }
 
 .header-blur {
@@ -996,6 +1018,7 @@ div.responsive {
 .undertitle__inner .info-wrap {
 	position: absolute;
 	top: 130px;
+	max-width: 950px;
 }
 .undertitle .card__title {
 	font-size: 40px;
@@ -1032,10 +1055,9 @@ div.responsive {
 
 .cardbox__card {
 	border: 1px solid #626262;
-	padding: 40px 80px 53px;
+	padding: 40px 80px 20px;
 	width: 100%;
 	max-width: 643px;
-	height: 335px;
 	margin-bottom: 15px;
 }
 

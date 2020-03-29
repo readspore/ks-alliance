@@ -1,5 +1,5 @@
 
-  <div class="header-wrap">
+  <div class="header-wrap" style="background: url(<?php echo get_field("main_img", get_the_ID() ) ?>) center no-repeat;">
     <div class="header-blur d-flex">
       <!-- TITLE-->
       <div class="title">
