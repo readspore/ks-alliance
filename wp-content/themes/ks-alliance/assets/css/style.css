@@ -28,6 +28,7 @@ a {
 
 .fl {
 	filter: invert();
+	-webkit-filter: invert();
 }
 
 .d-flex {
