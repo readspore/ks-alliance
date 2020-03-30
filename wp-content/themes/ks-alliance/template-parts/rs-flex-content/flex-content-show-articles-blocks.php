@@ -156,7 +156,7 @@ if(!$query->have_posts())
     <script>
       document.addEventListener("DOMContentLoaded", ()=>{
         var menu = ['1', '2', '3']
-        var mySwiper = new Swiper('.swiper-container', {
+        window.mySwiper = new Swiper('.swiper-container', {
             // Optional parameters
             direction: 'horizontal',
             loop: false,
